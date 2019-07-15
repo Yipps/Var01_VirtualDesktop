@@ -21,6 +21,8 @@ public class WeatherAPI : MonoBehaviour
     public Text CityDisplay;
     public Text TempDisplay;
     public Text DescriptionDisplay;
+    public Text minTemp;
+    public Text maxTemp;
     private float KelvinToCelsius = 273.15f;
 
 
@@ -65,9 +67,13 @@ public class WeatherAPI : MonoBehaviour
         wind = weatherJson["wind"]["speed"].AsFloat;
 
         temp = Mathf.Round(temp - KelvinToCelsius);
+        temp_min = Mathf.Round(temp_min - KelvinToCelsius);
+        temp_max = Mathf.Round(temp_max - KelvinToCelsius);
 
         CityDisplay.text = city;
         TempDisplay.text = temp.ToString() + "°C";
         DescriptionDisplay.text = weatherDescription;
+        minTemp.text = "Min " + temp_min.ToString() + "°C";
+        maxTemp.text = "Max " + temp_max.ToString() + "°C";
     }
 }

@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class WeatherAPI : MonoBehaviour
 {
     public string url = "http://api.openweathermap.org/data/2.5/weather?q=Vancouver&APPID=8c04c7b03919fa07c29c450c382db950";
+    public string url2 = "http://api.openweathermap.org/data/2.5/weather?q=London&APPID=8c04c7b03919fa07c29c450c382db950";
+    public string url3 = "http://api.openweathermap.org/data/2.5/weather?q=MexicoCity&APPID=8c04c7b03919fa07c29c450c382db950";
 
     public string city;
     public string weatherDescription;
@@ -35,7 +37,7 @@ public class WeatherAPI : MonoBehaviour
         if (request.error == null || request.error == "")
         {
             
-            Debug.Log("Response: " + request.text);
+            //Debug.Log("Response: " + request.text);
             response = request.text;
          
         }
